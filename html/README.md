@@ -1,3 +1,5 @@
+# LAMP Install: sudo apt-get install apache2 php5 mysql-server php5-mysql php5-gd php5-curl libapache2-mod-php5 phpmyadmin
+
 # php-login-minimal
 
 A simple, but secure PHP login script. Uses the ultra-modern & future-proof PHP 5.5 BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those functions available in these versions too). 
