@@ -16,7 +16,7 @@ if (isset($registration)) {
 
 
 $macaddress = returnmacAddress();
-echo macaddress
+echo $macaddress
 ?>
 
 
