@@ -15,10 +15,15 @@ if (isset($registration)) {
 }
 ?>
 
+$macaddress = returnmacAddress();
+
 <!-- register form -->
 <form method="post" action="register.php" name="registerform">
 
     <!-- the user name input field uses a HTML5 pattern check -->
+    <label for="login_input_macaddress">Mac Address</label><br>
+    <input id="login_input_macaddress" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" value=$macaddress name="macaddress" required /> 
+
     <label for="login_input_username">Username (only letters and numbers, 2 to 64 characters)</label><br>
     <input id="login_input_username" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required /> 
 
@@ -33,8 +38,6 @@ if (isset($registration)) {
     <input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
     <input type="submit"  name="register" value="Register" />
 
-    <label for="login_input_macaddress">Username (only letters and numbers, 2 to 64 characters)</label><br>
-    <input id="login_input_macaddress" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="macaddress" required /> 
 
 </form>
 
