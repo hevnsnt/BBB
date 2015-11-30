@@ -1,4 +1,3 @@
-<?php include("macaddy.php"); ?>
 <?php
 // show potential errors / feedback (from registration object)
 if (isset($registration)) {
@@ -14,17 +13,19 @@ if (isset($registration)) {
     }
 }
 
-
-$macaddress = returnmacAddress();
+include("macaddy.php"); // We get the user's Mac address from this file
+$macaddress = returnmacAddress(); // and assign it to this variable as we will be using it in the form below
 ?>
 
 
 <!-- register form -->
 <form method="post" action="register.php" name="registerform">
+
 <input type="hidden" name="isBanned" value="YES">
+
     <!-- the user name input field uses a HTML5 pattern check -->
     <label for="login_input_macaddress">Mac Address</label>
-    <input id="login_input_macaddress" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" value="<?php echo $macaddress; ?>" name="macaddress" required /> 
+    <input id="login_input_macaddress" class="login_input" type="text" value="<?php echo $macaddress; ?>" name="macaddress" required /> 
 <br>
     <label for="login_input_username">Username (only letters and numbers, 2 to 64 characters)</label>
     <input id="login_input_username" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required /> 
