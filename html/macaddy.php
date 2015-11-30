@@ -44,6 +44,3 @@ foreach ($arpSplitted as $value) {
 return false;
 }
 ?>
-<br>
-<b>Your Mac Address: </b>
-<?php echo returnmacAddress(); ?> <br><br>
