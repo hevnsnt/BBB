@@ -9,7 +9,7 @@ $dbhandle = mysql_connect($hostname, $username, $password)
 //echo "Connected to MySQL<br>";
 
 //select a database to work with
-$selected = mysql_select_db("seckc",$dbhandle) 
+$selected = mysql_select_db("seckc",$dbhandle); 
 //  or die("Could not select seckc");
 
 //execute the SQL query and return records
