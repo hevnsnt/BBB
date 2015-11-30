@@ -1,4 +1,3 @@
-<?php include("userlist.php"); ?>
 <?php include("macaddy.php"); ?>
 <?php
 // show potential errors / feedback (from login object)

@@ -14,7 +14,7 @@ if (isset($registration)) {
     }
 }
 ?>
-This is your MAC:
+
 <!-- register form -->
 <form method="post" action="register.php" name="registerform">
 
