@@ -18,7 +18,7 @@ $result = mysql_query("SELECT user_name, isBanned FROM users");
 echo "Player List: <br>";
 //fetch tha data from the database 
 while ($row = mysql_fetch_array($result)) {
-   echo "User ID:".$row{'user_name'}." Banned:".$row{'isBanned'}."<br>";
+   echo "User ID: ".$row{'user_name'}." Banned: ".$row{'isBanned'}."<br>";
 }
 //close the connection
 mysql_close($dbhandle);
