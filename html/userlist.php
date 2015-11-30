@@ -15,4 +15,4 @@ echo "<tr><td>" . $row['user_name'] . "</td><td>" . $row['isBanned'] . "</td></t
 
 echo "</table>"; //Close the table in HTML
 
-mysql_close(); //Make sure to close out the database connection
+// mysql_close(); //Make sure to close out the database connection
