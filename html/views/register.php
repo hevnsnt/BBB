@@ -21,7 +21,7 @@ $macaddress = returnmacAddress();
 
 <!-- register form -->
 <form method="post" action="register.php" name="registerform">
-
+<input type="hidden" name="isBanned" value="YES">
     <!-- the user name input field uses a HTML5 pattern check -->
     <label for="login_input_macaddress">Mac Address</label>
     <input id="login_input_macaddress" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" value="<?php echo $macaddress; ?>" name="macaddress" required /> 
