@@ -7,7 +7,7 @@ require_once("config/db.php");
 $query = "SELECT * FROM users"; //You don't need a ; like you do in SQL
 $result = mysql_query($query);
 
-echo "People Playing"
+People Playing
 echo "<table>"; // start a table tag in the HTML
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
