@@ -13,9 +13,12 @@ if (isset($registration)) {
         }
     }
 }
-?>
+
 
 $macaddress = returnmacAddress();
+echo macaddress
+?>
+
 
 <!-- register form -->
 <form method="post" action="register.php" name="registerform">
