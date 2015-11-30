@@ -2,7 +2,7 @@
 require_once("config/db.php");
 
 //connection to the database
-$dbhandle = mysql_connect($DB_HOST, $DB_NAME, $DB_PASS) 
+$dbhandle = mysql_connect(DB_HOST, DB_NAME, DB_PASS) 
  or die("Unable to connect to MySQL");
 echo "Connected to MySQL<br>";
 
