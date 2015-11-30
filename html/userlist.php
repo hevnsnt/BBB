@@ -12,7 +12,7 @@ $dbhandle = mysql_connect($DB_HOST, $DB_NAME, $DB_PASS)
 echo "Connected to MySQL<br>";
 
 //select a database to work with
-$selected = mysql_select_db("examples",$dbhandle) 
+$selected = mysql_select_db("seckc",$dbhandle) 
   or die("Could not select examples");
 
 //execute the SQL query and return records
