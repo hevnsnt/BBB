@@ -1,8 +1,13 @@
 <?php
-require_once("config/db.php");
+//require_once("config/db.php");
+
+define("DB_HOST", "127.0.0.1");
+define("DB_NAME", "seckc");
+define("DB_USER", "root");
+define("DB_PASS", "password");
 
 //connection to the database
-$dbhandle = mysql_connect(DB_HOST, DB_NAME, DB_PASS) 
+$dbhandle = mysql_connect($DB_HOST, $DB_NAME, $DB_PASS) 
  or die("Unable to connect to MySQL");
 echo "Connected to MySQL<br>";
 
