@@ -15,7 +15,7 @@ $selected = mysql_select_db("seckc",$dbhandle)
 //execute the SQL query and return records
 $result = mysql_query("SELECT user_name, isBanned FROM users");
 
-echo "Player List";
+echo "Player List: <br>";
 //fetch tha data from the database 
 while ($row = mysql_fetch_array($result)) {
    echo "User ID:".$row{'user_name'}." Banned:".$row{'isBanned'}."<br>";
