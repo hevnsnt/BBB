@@ -1,26 +1,23 @@
 <?php
-//require_once("config/db.php");
-
-define("DB_HOST", "127.0.0.1");
-define("DB_NAME", "seckc");
-define("DB_USER", "root");
-define("DB_PASS", "password");
+$username = "root";
+$password = "password";
+$hostname = "localhost"; 
 
 //connection to the database
-$dbhandle = mysql_connect($DB_HOST, $DB_NAME, $DB_PASS) 
+$dbhandle = mysql_connect($hostname, $username, $password) 
  or die("Unable to connect to MySQL");
 echo "Connected to MySQL<br>";
 
 //select a database to work with
 $selected = mysql_select_db("seckc",$dbhandle) 
-  or die("Could not select examples");
+  or die("Could not select seckc");
 
 //execute the SQL query and return records
 $result = mysql_query("SELECT user_name, isBanned FROM users");
 
 //fetch tha data from the database 
 while ($row = mysql_fetch_array($result)) {
-   echo "UserName:".$row{'user_name'}." Banned:".$row{'isBanned'}."<br>";
+   echo "ID:".$row{'user_name'}." Name:".$row{'isBanned'}."<br>";
 }
 //close the connection
 mysql_close($dbhandle);
