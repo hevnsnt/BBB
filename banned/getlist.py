@@ -11,7 +11,7 @@ def banner():
   print "#" * 30
 
 def writefile(target,data):
-  print "Writing to %s" % file
+  print data
   target.write(data)
   target.write("\n")
 
@@ -31,6 +31,7 @@ def readDb(write=False,file=""):
 
 def main(argv):
   outputfile = ''
+  banner()
   try:
     opts, args = getopt.getopt(argv,"ho:",["ofile="])
   except getopt.GetoptError:
@@ -42,11 +43,12 @@ def main(argv):
         print 'getlist.py -o <outputfile>'
         sys.exit()
       elif opt in ("-o", "--ofile"):
+        print 'Writing to %s' % arg
         target = open(arg, 'w')
         readDb(True,target)
         target.close()
+        print 'done.'
   else:
-    banner()
     readDb()
 
 
