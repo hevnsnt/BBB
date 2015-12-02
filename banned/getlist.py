@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import MySQLdb,sys,getopt # sudo apt-get install python-mysqldb
-from termcolor import colored
 
 db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      user="root", # your username
