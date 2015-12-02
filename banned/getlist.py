@@ -20,18 +20,13 @@ def display(data):
   banner()
 
 def readDb(write=False,file=""):
-        # Create a Cursor object. It will let
-        cur = db.cursor()
-
-        # Use all the SQL you like
-        cur.execute("SELECT macaddress from Banned")
-
-        # print all the first cell of all the rows
-            for row in cur.fetchall() :
-              if write:
-                writefile(row[0])
-              else:
-                display(row[0])
+  cur = db.cursor()  # Create Db cursor object. 
+  cur.execute("SELECT macaddress from Banned")
+  for row in cur.fetchall() :
+    if write:
+      writefile(row[0])
+    else:
+      display(row[0])
 
 
 def main(argv):
