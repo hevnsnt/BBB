@@ -26,7 +26,7 @@ def readDb(write=False,file=""):
             print row[0]
           else:
             print "Writing to %s" % file
-            target = open(filename, 'w')
+            target = open(file, 'w')
             target.write(row[0])
             target.write("\n")
         if file != "" : target.close()
