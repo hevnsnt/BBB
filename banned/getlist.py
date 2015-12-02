@@ -16,7 +16,6 @@ def writefile(target,data):
   target.write("\n")
 
 def display(data):
-  print "No output file selected, printing results"
   print data
 
 def readDb(write=False,file=""):
@@ -61,6 +60,7 @@ def main(argv):
         instructions(arg)
         
   else:
+    print "No output file selected, printing results"
     readDb()
 
 if __name__ == "__main__":
