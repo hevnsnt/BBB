@@ -34,7 +34,7 @@ def main(argv):
          sys.exit()
       elif opt in ("-o", "--ofile"):
          outputfile = arg
-          readDb(arg)
+         readDb(arg)
 
 
 if __name__ == "__main__":
