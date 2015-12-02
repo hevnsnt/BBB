@@ -35,8 +35,8 @@ def main(argv):
       elif opt in ("-o", "--ofile"):
         outputfile = arg
         readDb(arg)
-        else:
-          readDb()
+      else:
+        readDb()
 
 
 if __name__ == "__main__":
