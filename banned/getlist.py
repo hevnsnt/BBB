@@ -33,6 +33,7 @@ def instructions(arg):
   print ("Instructions for use:")
   print("edit /etc/hostapd/hostapd.conf to:")
   print("deny_mac_file=%s") % os.path.abspath(arg)
+  print
 
 
 def main(argv):
@@ -54,6 +55,7 @@ def main(argv):
         readDb(True,target)
         target.close()
         print '  [+] Done.'
+        print
         instructions(arg)
         
   else:
