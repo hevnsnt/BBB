@@ -1,12 +1,12 @@
 #!/usr/bin/python
-import MySQLdb,sys,getopt
-write=False
+import MySQLdb,sys,getopt # sudo apt-get install python-mysqldb
+
 db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      user="root", # your username
                      passwd="password", # your password
                      db="seckc") # name of the data base
 
-def readDb():
+def readDb(write=False):
         # Create a Cursor object. It will let
         cur = db.cursor()
 
@@ -22,7 +22,6 @@ def readDb():
                         print row[0]
 
 def main(argv):
-   inputfile = ''
    outputfile = ''
    try:
       opts, args = getopt.getopt(argv,"ho:",["ofile="])
@@ -35,7 +34,7 @@ def main(argv):
          sys.exit()
       elif opt in ("-o", "--ofile"):
          outputfile = arg
-   readDb()
+          readDb(arg)
 
 
 if __name__ == "__main__":
