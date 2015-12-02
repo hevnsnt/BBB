@@ -12,12 +12,12 @@ def banner():
 
 def writefile(target,data):
   print "Writing to %s" % file
-  target.write(row[0])
+  target.write(data)
   target.write("\n")
 
 def display(data):
   print "No output file selected, printing results"
-  banner()
+  print data
 
 def readDb(write=False,file=""):
   cur = db.cursor()  # Create Db cursor object. 
@@ -46,6 +46,7 @@ def main(argv):
         readDb(True,target)
         target.close()
   else:
+    banner()
     readDb()
 
 
