@@ -10,6 +10,14 @@ def banner():
   print "     SecKC Banning Script"
   print "#" * 30
 
+def writefile(target,data):
+  print "Writing to %s" % file
+  target.write(row[0])
+  target.write("\n")
+
+def display(data):
+  print "No output file selected, printing results"
+  banner()
 
 def readDb(write=False,file=""):
         # Create a Cursor object. It will let
@@ -17,19 +25,13 @@ def readDb(write=False,file=""):
 
         # Use all the SQL you like
         cur.execute("SELECT macaddress from Banned")
-        if not write:
-                print "No output file selected, printing results"
-                banner()
+
         # print all the first cell of all the rows
-        for row in cur.fetchall() :
-          if not write:
-            print row[0]
-          else:
-            print "Writing to %s" % file
-            target = open(file, 'w')
-            target.write(row[0])
-            target.write("\n")
-        if file != "" : target.close()
+            for row in cur.fetchall() :
+              if write:
+                writefile(row[0])
+              else:
+                display(row[0])
 
 
 def main(argv):
@@ -45,7 +47,9 @@ def main(argv):
         print 'getlist.py -o <outputfile>'
         sys.exit()
       elif opt in ("-o", "--ofile"):
-        readDb(True,arg)
+        target = open(arg, 'w')
+        readDb(True,target)
+        target.close()
   else:
     readDb()
 
