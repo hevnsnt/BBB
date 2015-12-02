@@ -11,7 +11,7 @@ def banner():
   print ("#" * 30)
 
 def writefile(target,data):
-  print data
+  print("    [!]" + data)
   target.write(data)
   target.write("\n")
 
