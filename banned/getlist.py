@@ -11,7 +11,7 @@ def banner():
   print "#" * 30
 
 
-def readDb(write=False):
+def readDb(write=False,file=""):
         # Create a Cursor object. It will let
         cur = db.cursor()
 
@@ -25,7 +25,12 @@ def readDb(write=False):
                 if not write:
                         print row[0]
                 else:
-                        print row[0]
+                  print "Writing to %s" % file
+                  target = open(filename, 'w')
+                  target.write(row[0])
+                  target.write("\n")
+        if target : target.close()
+
 
 def main(argv):
   outputfile = ''
@@ -40,8 +45,7 @@ def main(argv):
         print 'getlist.py -o <outputfile>'
         sys.exit()
       elif opt in ("-o", "--ofile"):
-        outputfile = arg
-        readDb(arg)
+        readDb(True,arg)
   else:
     readDb()
 
