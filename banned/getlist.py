@@ -29,10 +29,11 @@ def readDb(write=False,file=""):
       display(row[0])
 
 def instructions(arg):
-  print("#" * 30)
+  print("#" * 50)
   print("## Instructions for use:")
   print("## edit /etc/hostapd/hostapd.conf to:")
   print("## deny_mac_file=%s") % os.path.abspath(arg)
+  print("#" * 50)
   print
 
 
