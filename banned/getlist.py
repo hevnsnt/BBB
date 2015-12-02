@@ -33,7 +33,7 @@ def instructions(arg):
   print("#" * (length + 30))
   print("## Instructions for use:" + " " * (length + 4) + "##")
   print("## edit /etc/hostapd/hostapd.conf to:" + " " * (length + -9) + "##" )
-  print("## deny_mac_file=%s" + " " * (length -12) + "##" ) % os.path.abspath(arg)
+  print("## deny_mac_file=%s" + " " * (length- (length-12)) + "##" ) % os.path.abspath(arg)
   print("#" * (length + 30))
   print
 
