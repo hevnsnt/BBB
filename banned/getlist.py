@@ -43,11 +43,11 @@ def main(argv):
         print 'getlist.py -o <outputfile>'
         sys.exit()
       elif opt in ("-o", "--ofile"):
-        print 'Writing to %s' % arg
+        print '  [+] Writing to %s' % arg
         target = open(arg, 'w')
         readDb(True,target)
         target.close()
-        print 'done.'
+        print '  [+] Done.'
   else:
     readDb()
 
