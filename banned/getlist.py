@@ -8,7 +8,6 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
 def banner():
   print ("#" * 30)
   print ("     SecKC Banning Script")
-  print (" Edit hostapd.conf")
   print ("#" * 30)
 
 def writefile(target,data):
@@ -29,6 +28,13 @@ def readDb(write=False,file=""):
     else:
       display(row[0])
 
+def instructions(arg):
+  print ("#" * 30)
+  print ("Instructions for use:")
+  print("edit /etc/hostapd/hostapd.conf to:")
+  print("deny_mac_file=%s") % os.path.abspath(arg)
+
+
 def main(argv):
   outputfile = ''
   banner()
@@ -48,9 +54,8 @@ def main(argv):
         readDb(True,target)
         target.close()
         print '  [+] Done.'
-        print
-        print("edit /etc/hostapd/hostapd.conf to:")
-        print("#deny_mac_file=%s") % os.path.abspath(arg)
+        instructions(arg)
+        
   else:
     readDb()
 
