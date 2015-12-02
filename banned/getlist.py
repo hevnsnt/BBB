@@ -7,7 +7,7 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      db="seckc") # name of the data base
 def banner():
   print "#" * 30
-  print "%s SecKC Banning Script %s", (" "*10, " "*10)
+  print "     SecKC Banning Script"
   print "#" * 30
 
 
@@ -19,6 +19,7 @@ def readDb(write=False):
         cur.execute("SELECT macaddress from Banned")
         if not write:
                 print "No output file selected, printing results"
+                banner()
         # print all the first cell of all the rows
         for row in cur.fetchall() :
                 if not write:
