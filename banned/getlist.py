@@ -33,8 +33,8 @@ def main(argv):
          print 'getlist.py -o <outputfile>'
          sys.exit()
       elif opt in ("-o", "--ofile"):
-         outputfile = arg
-         readDb(arg)
+        outputfile = arg
+        readDb(arg)
         else:
           readDb()
 
