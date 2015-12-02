@@ -1,14 +1,15 @@
 #!/usr/bin/python
 import MySQLdb,sys,getopt # sudo apt-get install python-mysqldb
+from termcolor import colored
 
 db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      user="root", # your username
                      passwd="password", # your password
                      db="seckc") # name of the data base
 def banner():
-  print "#" * 30
-  print "     SecKC Banning Script"
-  print "#" * 30
+  print colored("#" * 30, 'green')
+  print colored("     SecKC Banning Script", 'grey')
+  print colored("#" * 30, 'green')
 
 def writefile(target,data):
   print data
