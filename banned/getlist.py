@@ -5,6 +5,11 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      user="root", # your username
                      passwd="password", # your password
                      db="seckc") # name of the data base
+def banner():
+  print "#" * 30
+  print "%s SecKC Banning Script %s", (" "*10, " "*10)
+  print "#" * 30
+
 
 def readDb(write=False):
         # Create a Cursor object. It will let
