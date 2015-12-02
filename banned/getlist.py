@@ -6,9 +6,9 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      passwd="password", # your password
                      db="seckc") # name of the data base
 def banner():
-  PrintInColor.green("#" * 30)
-  PrintInColor.grey("     SecKC Banning Script")
-  PrintInColor.green("#" * 30)
+  print ("#" * 30)
+  print ("     SecKC Banning Script")
+  print ("#" * 30)
 
 def writefile(target,data):
   print data
