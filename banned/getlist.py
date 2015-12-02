@@ -24,7 +24,7 @@ def readDb(write=False,file=""):
   cur.execute("SELECT macaddress from Banned")
   for row in cur.fetchall() :
     if write:
-      writefile(row[0])
+      writefile(file, row[0])
     else:
       display(row[0])
 
