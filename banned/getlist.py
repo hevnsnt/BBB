@@ -31,7 +31,7 @@ def readDb(write=False,file=""):
 def instructions(arg):
   length = int(len(str(os.path.abspath(arg))))
   print("#" * (length + 30))
-  print("## Instructions for use:" + " " * (length + 8) + "##")
+  print("## Instructions for use:" + " " * (length + 4) + "##")
   print("## edit /etc/hostapd/hostapd.conf to:" + " " * 11 + "##" )
   print("## deny_mac_file=%s") % os.path.abspath(arg)
   print("#" * 50)
