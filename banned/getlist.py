@@ -28,15 +28,16 @@ def main(argv):
    except getopt.GetoptError:
       print 'getlist.py -o <outputfile>'
       sys.exit(2)
-   for opt, arg in opts:
-      if opt == '-h':
-         print 'getlist.py -o <outputfile>'
-         sys.exit()
-      elif opt in ("-o", "--ofile"):
-        outputfile = arg
-        readDb(arg)
-      else:
-        readDb()
+    if len(opts) > 0: 
+      for opt, arg in opts:
+        if opt == '-h':
+          print 'getlist.py -o <outputfile>'
+          sys.exit()
+        elif opt in ("-o", "--ofile"):
+          outputfile = arg
+          readDb(arg)
+    else:
+      readDb()
 
 
 if __name__ == "__main__":
