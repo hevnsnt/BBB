@@ -22,14 +22,14 @@ def readDb(write=False,file=""):
                 banner()
         # print all the first cell of all the rows
         for row in cur.fetchall() :
-                if not write:
-                        print row[0]
-                else:
-                  print "Writing to %s" % file
-                  target = open(filename, 'w')
-                  target.write(row[0])
-                  target.write("\n")
-        if target : target.close()
+          if not write:
+            print row[0]
+          else:
+            print "Writing to %s" % file
+            target = open(filename, 'w')
+            target.write(row[0])
+            target.write("\n")
+        if file != "" : target.close()
 
 
 def main(argv):
