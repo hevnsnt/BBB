@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import MySQLdb,sys,getopt # sudo apt-get install python-mysqldb
+import MySQLdb,sys,os,getopt # sudo apt-get install python-mysqldb
 
 db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      user="root", # your username
@@ -8,10 +8,11 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
 def banner():
   print ("#" * 30)
   print ("     SecKC Banning Script")
+  print (" Edit hostapd.conf")
   print ("#" * 30)
 
 def writefile(target,data):
-  print("    [!]" + data)
+  print("    [-]" + data)
   target.write(data)
   target.write("\n")
 
@@ -47,6 +48,9 @@ def main(argv):
         readDb(True,target)
         target.close()
         print '  [+] Done.'
+        print
+        print("edit /etc/hostapd/hostapd.conf to:")
+        print("#deny_mac_file=%s") % os.path.abspath(arg)
   else:
     readDb()
 
