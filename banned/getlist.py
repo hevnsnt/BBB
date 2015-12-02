@@ -22,22 +22,22 @@ def readDb(write=False):
                         print row[0]
 
 def main(argv):
-   outputfile = ''
-   try:
-      opts, args = getopt.getopt(argv,"ho:",["ofile="])
-   except getopt.GetoptError:
-      print 'getlist.py -o <outputfile>'
-      sys.exit(2)
-    if len(opts) > 0: 
-      for opt, arg in opts:
-        if opt == '-h':
-          print 'getlist.py -o <outputfile>'
-          sys.exit()
-        elif opt in ("-o", "--ofile"):
-          outputfile = arg
-          readDb(arg)
-    else:
-      readDb()
+  outputfile = ''
+  try:
+    opts, args = getopt.getopt(argv,"ho:",["ofile="])
+  except getopt.GetoptError:
+    print 'getlist.py -o <outputfile>'
+    sys.exit(2)
+  if len(opts) > 0: 
+    for opt, arg in opts:
+      if opt == '-h':
+        print 'getlist.py -o <outputfile>'
+        sys.exit()
+      elif opt in ("-o", "--ofile"):
+        outputfile = arg
+        readDb(arg)
+  else:
+    readDb()
 
 
 if __name__ == "__main__":
