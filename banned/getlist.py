@@ -29,7 +29,7 @@ def readDb(write=False,file=""):
       display(row[0])
 
 def instructions(arg):
-  length = len(str(os.path.abspath(arg)))
+  length = int(len(str(os.path.abspath(arg))))
   print("#" * length + 10)
   print("## Instructions for use:" + " " * 24 + "##")
   print("## edit /etc/hostapd/hostapd.conf to:" + " " * 11 + "##" )
